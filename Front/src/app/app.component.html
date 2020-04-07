@@ -1,0 +1,39 @@
+<form>
+  <mat-form-field>
+    <label>Cartera</label>
+    <input matInput [(ngModel)]="newProyecto.cartera" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <mat-label>Compañia</mat-label>
+  <mat-form-field>
+    <mat-select [(ngModel)]="newProyecto.compania" [ngModelOptions]="{standalone: true}">
+      <mat-option value="banco">Banco</mat-option>
+      <mat-option value="seguros">Seguros</mat-option>
+      <mat-option value="bs">BS</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <label>Dirección</label>
+  <mat-form-field [(ngModel)]="newProyecto.direccion" [ngModelOptions]="{standalone: true}">
+    <mat-select>
+      <mat-option value="direccion general" >Dirección General</mat-option>
+      <mat-option value="seguridad">Seguridad</mat-option>
+      <mat-option value="desarrollo transversal">Desarrollo Transversal</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <label>Area</label>
+    <input matInput [(ngModel)]="newProyecto.area" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <button mat-raised-button (click)="addProyecto()">Añadir</button>
+</form>
+
+<button mat-raised-button (click)="updateProyecto()">Actualizar</button>
+<div *ngFor="let proyecto of proyectos">
+  <label>Area</label>
+  {{proyecto.cartera}}
+  <label>Compañia</label>
+  {{proyecto.compania}}
+  <label>Dirección</label>
+  {{proyecto.direccion}}
+  <label>Area</label>
+  {{proyecto.area}}
+</div>
